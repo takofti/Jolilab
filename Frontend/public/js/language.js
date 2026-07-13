@@ -3,7 +3,7 @@ let currentTranslations = {};
 async function loadLanguage(lang) {
     try {
         const fileName = lang.charAt(0).toUpperCase() + lang.slice(1); // en -> En, ru -> Ru
-        const response = await fetch(`/Frontend/public/language/${fileName}.json`);
+        const response = await fetch(`Frontend/public/language/${fileName}.json`);
         if (!response.ok) throw new Error(`Не удалось загрузить ${fileName}.json`);
         currentTranslations = await response.json();
     } catch (err) {
